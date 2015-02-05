@@ -1,0 +1,9 @@
+application: aanassr-ms
+version: gotest3
+runtime: go
+api_version: go2
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: _go_app-
