@@ -28,10 +28,5 @@ func TestMul(t *testing.T) {
 	}
 }
 
-func TestDiv(t *testing.T) {
-	x, y := 2, 3
-	z := Div(x, y)
-	if float64(z) != float64(x)/float64(y) {
-		t.Fatalf("%d/%d != %f\n", x, y, float64(x)/float64(y))
-	}
+
 }

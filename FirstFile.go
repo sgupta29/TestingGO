@@ -11,7 +11,3 @@ func Mul(x, y int) int {
 func Add(x, y int) int {
 	return x + y
 }
-
-func Div(x, y int) int {
-	return x / y
-}
