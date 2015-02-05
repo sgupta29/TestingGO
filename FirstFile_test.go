@@ -27,6 +27,3 @@ func TestMul(t *testing.T) {
 		t.Fatalf("%d*%d != %d\n", x, y, x*y)
 	}
 }
-
-
-}
