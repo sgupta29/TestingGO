@@ -5,35 +5,38 @@ import (
 	"testing"
 )
 
-type MySuite struct{}
-var _ = Suite(&MySuite{})
+import (
+	"testing"
+)
 
-// Hook up gocheck into the "go test" runner.
-func Test(t *testing.T) {
-	TestingT(t)
-}
-
-func (s *MySuite) TestAdd(c *C) {
+func TestAdd(t *testing.T) {
 	x, y := 1, 2
 	z := Add(x, y)
-	c.Assert(z, Equals, x+y)
+	if z != x+y {
+		t.Fatalf("%d + %d != %d\n", x, y, x+y)
+	}
 }
 
-func (s *MySuite) TestSub(c *C) {
+func TestSub(t *testing.T) {
 	x, y := 1, 2
 	z := Sub(x, y)
-
-	c.Assert(z, Equals, x-y)
+	if z != x-y {
+		t.Fatalf("%d-%d != %d\n", x, y, x-y)
+	}
 }
 
-func (s *MySuite) TestMul(c *C) {
+func TestMul(t *testing.T) {
 	x, y := 2, 3
 	z := Mul(x, y)
-	c.Assert(z, Equals, x*y)
+	if z != x*y {
+		t.Fatalf("%d*%d != %d\n", x, y, x*y)
+	}
 }
 
-func (s *MySuite) TestDiv(c *C) {
+func TestDiv(t *testing.T) {
 	x, y := 2, 3
 	z := Div(x, y)
-	c.Assert(z, Equals, float64(x)/float64(y))
+	if float64(z) != float64(x)/float64(y) {
+		t.Fatalf("%d/%d != %f\n", x, y, float64(x)/float64(y))
+	}
 }
